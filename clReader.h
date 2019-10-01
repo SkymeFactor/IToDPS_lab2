@@ -11,6 +11,7 @@
  */
 #pragma once
 
+#include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
@@ -51,9 +52,10 @@ public:
      * @tparam T 
      * @param data: where to read file.
      * @param filename: name of the file to read.
+     * @param verbose: if you want to write data to console.
      */
     template <class T>
-    void readFile(MyVectorStruct<T> &data, const char* filename){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+    void readFile(MyVectorStruct<T> &data, const char* filename, bool verbose){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
         std::ifstream fin(filename);
         std::string tmpl, tmpr, tmpo;
         while (fin >> tmpl >> tmpo >> tmpr){
@@ -66,6 +68,8 @@ public:
                 data.right.push_back(std::runtime_error("Invalid datatype.\n"));
                 continue;
             }
+            if (verbose)
+                std::cout << tmpl << " " << tmpo << " " << tmpr << ";\n";
         }
         fin.close();
     }
