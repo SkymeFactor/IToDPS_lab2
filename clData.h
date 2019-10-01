@@ -94,6 +94,14 @@ public:
         operation = op;
         this->count();
     };
+    clData (T left, T right, char op, bool counted){
+        leftNumber = left;
+        rightNumber = right;
+        operation = op;
+        if (counted){
+            this->count();
+        }
+    };
     ~clData (){
 
     };
