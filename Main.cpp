@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
     std::cout << "stage 1: reading.\n";
     reader.readFile(dataset, "input.txt", false);
     std::cout << "stage 2: writing.\n";
-    reader.writeFile(dataset, "output.txt");
+    reader.writeFile(dataset, "output.txt", false);
     std::cout << "Computing finished.\n";
     
     return 0;

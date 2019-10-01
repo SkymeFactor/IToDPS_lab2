@@ -82,7 +82,7 @@ public:
      * @param filename: name of the file to write to.
      */
     template <class T>
-    void writeFile (MyVectorStruct<T> &data, const char* filename){
+    void writeFile (MyVectorStruct<T> &data, const char* filename, bool verbose){
         std::ofstream fout(filename);
         auto itL = data.left.begin();
         auto itR = data.right.begin();
@@ -90,6 +90,9 @@ public:
             if ((*itR).what() == std::runtime_error("").what())
                 fout << (*itL).GetLeft() << " " << (*itL).GetOperation() << " " << (*itL).GetRight()
                     << " = " << (*itL).GetResult() << "\n";
+                    if (verbose)
+                        std::cout << (*itL).GetLeft() << " " << (*itL).GetOperation() << " " 
+                            << (*itL).GetRight() << " = " << (*itL).GetResult() << "\n";
             else
                 fout << (*itR).what();
             itL++; itR++;
