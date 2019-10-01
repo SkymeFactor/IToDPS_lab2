@@ -80,6 +80,7 @@ public:
      * @tparam T 
      * @param data: MyVectorStruct data to use.
      * @param filename: name of the file to write to.
+     * @param verbose: if you want to write data to console.
      */
     template <class T>
     void writeFile (MyVectorStruct<T> &data, const char* filename, bool verbose){
