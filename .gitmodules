@@ -1,0 +1,6 @@
+[submodule "getInfo"]
+	path = getInfo
+	url = https://github.com/SkymeFactor/getInfo.git
+[submodule "B-plus_tree"]
+	path = B-plus_tree
+	url = https://github.com/SkymeFactor/B-plus_tree.git
