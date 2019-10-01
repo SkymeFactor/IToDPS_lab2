@@ -94,6 +94,14 @@ public:
         operation = op;
         this->count();
     };
+    /**
+     * @brief Construct a new clData object;
+     *      used by default, because there is no other way to write the data in it.
+     * @param left: value of left operand of expression.
+     * @param right: value of right operand of expression.
+     * @param op: operand of expression, has a type char.
+     * @param counted: false if you don't want to count with creation, has a type bool.
+     */
     clData (T left, T right, char op, bool counted){
         leftNumber = left;
         rightNumber = right;
