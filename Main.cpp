@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
     clReader reader;
 
     std::cout << "stage 1: reading.\n";
-    reader.readFile(dataset, "input.txt");
+    reader.readFile(dataset, "input.txt", false);
     std::cout << "stage 2: writing.\n";
     reader.writeFile(dataset, "output.txt");
     std::cout << "Computing finished.\n";
