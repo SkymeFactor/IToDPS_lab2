@@ -11,7 +11,6 @@
  */
 #pragma once
 
-#include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
@@ -52,10 +51,9 @@ public:
      * @tparam T 
      * @param data: where to read file.
      * @param filename: name of the file to read.
-     * @param verbose: if you want to write data to console.
      */
     template <class T>
-    void readFile(MyVectorStruct<T> &data, const char* filename, bool verbose){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+    void readFile(MyVectorStruct<T> &data, const char* filename){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
         std::ifstream fin(filename);
         std::string tmpl, tmpr, tmpo;
         while (fin >> tmpl >> tmpo >> tmpr){
@@ -68,8 +66,6 @@ public:
                 data.right.push_back(std::runtime_error("Invalid datatype.\n"));
                 continue;
             }
-            if (verbose)
-                std::cout << tmpl << " " << tmpo << " " << tmpr << ";\n";
         }
         fin.close();
     }
@@ -80,10 +76,9 @@ public:
      * @tparam T 
      * @param data: MyVectorStruct data to use.
      * @param filename: name of the file to write to.
-     * @param verbose: if you want to write data to console.
      */
     template <class T>
-    void writeFile (MyVectorStruct<T> &data, const char* filename, bool verbose){
+    void writeFile (MyVectorStruct<T> &data, const char* filename){
         std::ofstream fout(filename);
         auto itL = data.left.begin();
         auto itR = data.right.begin();
@@ -91,9 +86,6 @@ public:
             if ((*itR).what() == std::runtime_error("").what())
                 fout << (*itL).GetLeft() << " " << (*itL).GetOperation() << " " << (*itL).GetRight()
                     << " = " << (*itL).GetResult() << "\n";
-                    if (verbose)
-                        std::cout << (*itL).GetLeft() << " " << (*itL).GetOperation() << " " 
-                            << (*itL).GetRight() << " = " << (*itL).GetResult() << "\n";
             else
                 fout << (*itR).what();
             itL++; itR++;

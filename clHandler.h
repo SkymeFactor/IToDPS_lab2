@@ -26,7 +26,6 @@ class clHandler {
 private:
 
     T result;
-    double pResult;
     std::runtime_error errCode = std::runtime_error("");
     /**
      * @brief 
@@ -51,14 +50,6 @@ private:
             result = left / right;
         }
     }
-    void pDiv(T &left, T &right){
-        if (right == 0){
-            pResult = 0.0;
-            throw "Division by zero.\n";
-        } else {
-            pResult = (double)left / (double)right;
-        }
-    }
 public:
     /**
      * @brief Get the Result object
@@ -67,9 +58,6 @@ public:
      */
     T GetResult (){
         return result;
-    }
-    double GetPreciseResult(){
-        return pResult;
     }
     /**
      * @brief Get the Error object
@@ -94,7 +82,6 @@ public:
                 case '-': sub(left, right); break;
                 case '*': mlp(left, right); break;
                 case '/': div(left, right); break;
-                case ':': pDiv(left,right); break;
                 default: throw "Unsupported operation type.\n";
             }
         }
