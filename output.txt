@@ -1,0 +1,10 @@
+10 + 5 = 15
+-2 / 2 = -1
+Unsupported operation type.
+36 + 1 = 37
+2 - 10 = -8
+125 * -2147483648 = -2147483648
+1 / 50 = 0
+Division by zero.
+Invalid datatype.
+Unsupported operation type.
