@@ -100,6 +100,31 @@ public:
         }
         fout.close();
     }
+    /**
+     * @brief 
+     *      clRaader::makeRandom method. Allows to generate data
+     *      into the file specified by filename.
+     * @tparam T 
+     * @param data: MyVectorStruct data to use.
+     */
+    template <class T>
+    void makeRandom(MyVectorStruct<T> &data){
+        int num1 = rand(UINT32_MAX);
+        int num2 = rand(UINT32_MAX);
+        int ch = rand(5);
+        char sym;
+        switch (ch)
+        {
+            case 1: sym = '+'; break;
+            case 2: sym = '-'; break;
+            case 3: sym = '*'; break;
+            case 4: sym = '/'; break;
+            case 5: sym = ':'; break;
+        }
+        clData<T> tdata = clData<T>(num1, num2, sym);
+        data.left.push_back(tdata);
+        data.right.push_back(tdata.GetError());
+    }
 
     clReader (){};
     ~clReader (){};
