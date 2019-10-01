@@ -56,7 +56,7 @@ private:
             pResult = 0.0;
             throw "Division by zero.\n";
         } else {
-            pRresult = (double)left / (double)right;
+            pResult = (double)left / (double)right;
         }
     }
 public:
